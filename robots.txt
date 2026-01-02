@@ -1,0 +1,27 @@
+# Voice Forte Robots.txt
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /uploads/
+Disallow: /backups/
+Disallow: /logs/
+
+# Sitemap
+Sitemap: https://voiceforte.com/sitemap.xml
+
+# Crawl delay (if needed)
+Crawl-delay: 1
+
+# Block specific bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: dotbot
+Disallow: /

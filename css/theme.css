@@ -1,0 +1,416 @@
+/* css/theme.css - Consistent Theme for All Pages */
+/* ============================================= */
+/* Import this file in ALL pages for consistent theme */
+
+/* ====== CONSISTENT HERO SECTION ====== */
+.hero-section {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: white;
+    padding: 100px 0;
+    margin-top: 60px;
+    width: 100%;
+}
+
+.hero-title {
+    color: white;
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    color: #e2e8f0;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.hero-badge {
+    background: rgba(16, 185, 129, 0.2);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* ====== CONSISTENT STATS ====== */
+.hero-stats, .cta-stats {
+    margin-top: 60px;
+    gap: 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.stat-item, .cta-stat {
+    padding: 20px 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.stat-item:hover, .cta-stat:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+    border-color: #10b981;
+}
+
+.stat-item h3, .cta-stat-number {
+    color: #10b981;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+    text-shadow: 0 2px 5px rgba(16, 185, 129, 0.3);
+}
+
+.stat-item p, .cta-stat-label {
+    color: #cbd5e1;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ====== CONSISTENT SECTIONS THEME ====== */
+/* Dark background sections (like Why Choose Us) */
+.bg-gradient-dark, .bg-dark,
+.dark-section, .dark-bg {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #f1f5f9;
+}
+
+.bg-gradient-dark h1,
+.bg-gradient-dark h2,
+.bg-gradient-dark h3,
+.bg-gradient-dark h4,
+.dark-section .section-title {
+    color: white;
+}
+
+.bg-gradient-dark p,
+.bg-gradient-dark .section-subtitle,
+.dark-section p,
+.dark-section .section-subtitle {
+    color: #cbd5e1;
+}
+
+/* Light background sections (like Value Proposition) */
+.bg-light, .bg-white,
+.light-section, .light-bg {
+    background: #ffffff;
+    color: #111827;
+}
+
+.bg-light .section-title,
+.bg-light h1,
+.bg-light h2,
+.bg-light h3,
+.bg-light h4,
+.light-section .section-title {
+    color: #0f172a;
+}
+
+.bg-light .section-subtitle,
+.bg-light .lead,
+.bg-light p,
+.light-section .section-subtitle {
+    color: #334155;
+}
+
+/* Green CTA sections */
+.bg-gradient-green, .cta-section {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+}
+
+.bg-gradient-green h1,
+.bg-gradient-green h2,
+.bg-gradient-green h3,
+.cta-section h2 {
+    color: white;
+}
+
+.bg-gradient-green p,
+.cta-section p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* ====== CONSISTENT CARDS ====== */
+.value-card, .why-card, .differentiator-card,
+.pillar-card, .service-item, .package-card {
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    height: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
+}
+
+/* Light cards */
+.value-card, .differentiator-card,
+.pillar-card, .service-item {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    color: #374151;
+}
+
+.value-card:hover, .differentiator-card:hover,
+.pillar-card:hover, .service-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: #10b981;
+}
+
+.value-card h3, .differentiator-card h3,
+.pillar-card h3, .service-item h4 {
+    color: #0f172a;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.value-card p, .differentiator-card p,
+.pillar-card p, .service-item p {
+    color: #374151;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Dark cards */
+.why-card, .package-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: #cbd5e1;
+}
+
+.why-card:hover, .package-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #10b981;
+}
+
+.why-card h3, .package-card h3 {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.why-card p, .package-card p {
+    color: #cbd5e1;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* ====== CONSISTENT ICONS ====== */
+.card-icon, .value-icon, .pillar-icon {
+    border-radius: 12px;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.card-icon i, .value-icon i, .pillar-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+/* Light background icons */
+.value-icon {
+    background: #f0fdf4;
+}
+
+.value-icon i {
+    color: #059669;
+}
+
+.value-icon.pr { background: #f0f9ff; }
+.value-icon.pr i { color: #0284c7; }
+
+.value-icon.digital { background: #fef7ff; }
+.value-icon.digital i { color: #9333ea; }
+
+.value-icon.leads { background: #fff7ed; }
+.value-icon.leads i { color: #ea580c; }
+
+.value-icon.automation { background: #f0fdfa; }
+.value-icon.automation i { color: #0d9488; }
+
+/* Dark background icons */
+.why-card .card-icon {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.why-card .card-icon i {
+    color: #10b981;
+}
+
+/* ====== CONSISTENT TYPOGRAPHY ====== */
+.section-title {
+    font-size: 2.75rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    font-size: 1.25rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.lead {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+/* ====== CONSISTENT BUTTONS ====== */
+.btn-outline-light {
+    border-color: #ffffff;
+    color: #ffffff;
+    background: transparent;
+}
+
+.btn-outline-light:hover {
+    background: #ffffff;
+    color: #0f172a;
+}
+
+.btn-outline-success {
+    border-color: #10b981;
+    color: #10b981;
+    background: transparent;
+}
+
+.btn-outline-success:hover {
+    background: #10b981;
+    color: white;
+}
+
+/* ====== CONSISTENT SOCIAL SECTION ====== */
+.social-section {
+    background: #f8fafc;
+    color: #111827;
+}
+
+.social-section .section-title {
+    color: #0f172a;
+}
+
+.social-section .section-subtitle {
+    color: #475569;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.social-item {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    text-decoration: none;
+    color: #374151;
+    transition: all 0.3s ease;
+}
+
+.social-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.social-item i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.social-item.facebook:hover { border-color: #1877f2; color: #1877f2; }
+.social-item.instagram:hover { border-color: #e4405f; color: #e4405f; }
+.social-item.youtube:hover { border-color: #ff0000; color: #ff0000; }
+.social-item.tiktok:hover { border-color: #000000; color: #000000; }
+.social-item.linkedin:hover { border-color: #0077b5; color: #0077b5; }
+
+/* ====== ANIMATIONS ====== */
+.animate-fade-in {
+    animation: fadeIn 1s ease-out;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ====== RESPONSIVE DESIGN ====== */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-stats, .cta-stats {
+        gap: 20px;
+    }
+    
+    .stat-item, .cta-stat {
+        padding: 15px 20px;
+    }
+    
+    .stat-item h3, .cta-stat-number {
+        font-size: 2.25rem;
+    }
+    
+    .social-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .value-card, .why-card, .differentiator-card,
+    .pillar-card, .service-item, .package-card {
+        padding: 1.5rem;
+    }
+    
+    .value-card h3, .why-card h3, .differentiator-card h3,
+    .pillar-card h3, .service-item h4 {
+        font-size: 1.35rem;
+    }
+    
+    .hero-section {
+        padding: 80px 0 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-grid {
+        grid-template-columns: 1fr;
+    }
+}
