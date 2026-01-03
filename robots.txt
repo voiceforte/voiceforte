@@ -6,9 +6,8 @@ Disallow: /uploads/
 Disallow: /backups/
 Disallow: /logs/
 
-Sitemap: https://voiceforte.com/sitemap.xml
+Sitemap: https://www.voiceforte.com/sitemap.xml
 
-# Block specific bots
 User-agent: AhrefsBot
 Disallow: /
 
@@ -18,5 +17,5 @@ Disallow: /
 User-agent: MJ12bot
 Disallow: /
 
-User-agent: dotbot
+User-agent: DotBot
 Disallow: /
