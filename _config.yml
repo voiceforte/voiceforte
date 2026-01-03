@@ -3,3 +3,6 @@ description: Strategic Growth Agency
 baseurl: ""
 url: "https://www.voiceforte.com"
 permalink: pretty
+
+# Add these lines:
+google_analytics: G-VR7BTZFY5V
