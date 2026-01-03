@@ -1,16 +1,14 @@
-# Voice Forte™ Robots.txt
-
 User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /includes/
+Disallow: /uploads/
 Disallow: /backups/
 Disallow: /logs/
 
 Sitemap: https://voiceforte.com/sitemap.xml
 
-
-# Block SEO & Scraper Bots
+# Block specific bots
 User-agent: AhrefsBot
 Disallow: /
 
