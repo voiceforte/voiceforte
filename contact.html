@@ -75,11 +75,6 @@
     <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Custom Styles for Consistent Theme -->
-    <style>
-        /* You can add any custom styles here if needed */
-    </style>
 </head>
 <body>
     <!-- Header -->
@@ -112,7 +107,6 @@
     </div>
 </header>
 
-    <!-- Rest of your HTML content remains exactly the same -->
     <!-- Hero Section - Dark background with light text -->
     <section class="hero-section">
         <div class="container">
@@ -318,10 +312,12 @@
                         <div class="form-group">
                             <label for="name"><i class="fas fa-user"></i> Full Name *</label>
                             <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                            <div class="field-feedback"></div>
                         </div>
                         <div class="form-group">
                             <label for="company"><i class="fas fa-building"></i> Company Name</label>
                             <input type="text" id="company" name="company" placeholder="Your company or business name">
+                            <div class="field-feedback"></div>
                         </div>
                     </div>
                     
@@ -329,10 +325,12 @@
                         <div class="form-group">
                             <label for="email"><i class="fas fa-envelope"></i> Email Address *</label>
                             <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                            <div class="field-feedback"></div>
                         </div>
                         <div class="form-group">
                             <label for="phone"><i class="fas fa-phone"></i> WhatsApp/Phone Number *</label>
                             <input type="tel" id="phone" name="phone" required placeholder="+92 3XX XXXXXXX">
+                            <div class="field-feedback"></div>
                         </div>
                     </div>
                     
@@ -347,11 +345,13 @@
                             <option value="integrated">Full IntegraGrowth™ System</option>
                             <option value="notsure">Not Sure - Need Consultation</option>
                         </select>
+                        <div class="field-feedback"></div>
                     </div>
                     
                     <div class="form-group">
                         <label for="message"><i class="fas fa-comment"></i> What are your main growth challenges? *</label>
                         <textarea id="message" name="message" required rows="4" placeholder="Tell us about your current challenges, goals, and what you hope to achieve..."></textarea>
+                        <div class="field-feedback"></div>
                     </div>
                     
                     <div class="form-group">
@@ -365,6 +365,7 @@
                             <option value="750k+">PKR 750,000+</option>
                             <option value="custom">Custom Enterprise Solution</option>
                         </select>
+                        <div class="field-feedback"></div>
                     </div>
                     
                     <div class="form-submit">
@@ -384,6 +385,7 @@
                     border: 1px solid rgba(255, 255, 255, 0.1);
                     max-width: 800px;
                     margin: 0 auto;
+                    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
                 }
                 
                 .form-header {
@@ -395,6 +397,10 @@
                 .form-header h3 {
                     color: white;
                     margin-bottom: 1.5rem;
+                    font-size: 1.3rem;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
                 }
                 
                 .included-features {
@@ -408,10 +414,12 @@
                     align-items: center;
                     gap: 0.75rem;
                     color: #cbd5e1;
+                    padding: 5px 0;
                 }
                 
                 .feature i {
                     flex-shrink: 0;
+                    font-size: 1.1rem;
                 }
                 
                 .strategy-form {
@@ -428,15 +436,21 @@
                 @media (max-width: 768px) {
                     .form-row {
                         grid-template-columns: 1fr;
+                        gap: 1rem;
                     }
                     
                     .strategy-form-container {
                         padding: 1.5rem;
                     }
+                    
+                    .included-features {
+                        grid-template-columns: 1fr;
+                    }
                 }
                 
                 .form-group {
-                    margin-bottom: 1.5rem;
+                    margin-bottom: 1.8rem;
+                    position: relative;
                 }
                 
                 .form-group label {
@@ -444,21 +458,36 @@
                     align-items: center;
                     gap: 0.5rem;
                     color: white;
-                    margin-bottom: 0.5rem;
+                    margin-bottom: 0.75rem;
                     font-weight: 500;
+                    font-size: 1rem;
+                }
+                
+                .form-group label i {
+                    color: #10b981;
+                    width: 20px;
+                    text-align: center;
                 }
                 
                 .form-group input,
                 .form-group select,
                 .form-group textarea {
                     width: 100%;
-                    padding: 0.875rem 1rem;
-                    background: rgba(255, 255, 255, 0.1);
-                    border: 1px solid rgba(255, 255, 255, 0.2);
-                    border-radius: 8px;
+                    padding: 1rem 1.25rem;
+                    background: rgba(255, 255, 255, 0.08);
+                    border: 2px solid rgba(255, 255, 255, 0.15);
+                    border-radius: 10px;
                     color: white;
                     font-size: 1rem;
-                    transition: all 0.3s ease;
+                    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                    font-family: 'Inter', sans-serif;
+                }
+                
+                .form-group input:hover,
+                .form-group select:hover,
+                .form-group textarea:hover {
+                    background: rgba(255, 255, 255, 0.12);
+                    border-color: rgba(255, 255, 255, 0.25);
                 }
                 
                 .form-group input:focus,
@@ -466,32 +495,167 @@
                 .form-group textarea:focus {
                     outline: none;
                     border-color: #10b981;
-                    background: rgba(255, 255, 255, 0.15);
+                    background: rgba(16, 185, 129, 0.1);
+                    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
+                    transform: translateY(-2px);
+                }
+                
+                .form-group input.filled,
+                .form-group select.filled,
+                .form-group textarea.filled {
+                    background: rgba(16, 185, 129, 0.08);
+                    border-color: rgba(16, 185, 129, 0.4);
                 }
                 
                 .form-group input::placeholder,
                 .form-group textarea::placeholder {
                     color: rgba(255, 255, 255, 0.5);
+                    font-weight: 300;
+                }
+                
+                /* Enhanced Select Styling for Readability */
+                .form-group select {
+                    appearance: none;
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2310b981' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+                    background-repeat: no-repeat;
+                    background-position: right 1.25rem center;
+                    background-size: 16px;
+                    padding-right: 3rem;
+                    cursor: pointer;
+                }
+                
+                /* Dark background for dropdown options - FIXED FOR READABILITY */
+                .form-group select option {
+                    background: #0f172a !important; /* Dark background for dropdown */
+                    color: white !important; /* White text for contrast */
+                    padding: 12px 15px !important;
+                    font-size: 1rem !important;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+                }
+                
+                .form-group select option:checked {
+                    background: #10b981 !important; /* Green for selected option */
+                    color: white !important;
+                    font-weight: 600 !important;
+                }
+                
+                .form-group select option:hover {
+                    background: #1e293b !important; /* Darker blue on hover */
+                }
+                
+                /* For Firefox */
+                @-moz-document url-prefix() {
+                    .form-group select option {
+                        background: #0f172a !important;
+                        color: white !important;
+                    }
+                    
+                    .form-group select option:checked {
+                        background: #10b981 !important;
+                        color: white !important;
+                    }
+                }
+                
+                .form-group textarea {
+                    resize: vertical;
+                    min-height: 120px;
+                    line-height: 1.5;
+                }
+                
+                .field-feedback {
+                    height: 20px;
+                    margin-top: 6px;
+                    font-size: 0.85rem;
+                    color: #10b981;
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                }
+                
+                .field-feedback.show {
+                    opacity: 1;
                 }
                 
                 .form-submit {
                     text-align: center;
-                    margin-top: 2rem;
+                    margin-top: 3rem;
+                    padding-top: 2rem;
+                    border-top: 1px solid rgba(255, 255, 255, 0.1);
                 }
                 
                 .form-submit button {
-                    padding: 1rem 2rem;
+                    padding: 1.2rem 2.5rem;
                     font-size: 1.1rem;
+                    font-weight: 600;
+                    border-radius: 10px;
+                    transition: all 0.3s ease;
+                    background: linear-gradient(135deg, #10b981, #059669);
+                    border: none;
+                    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+                }
+                
+                .form-submit button:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+                    background: linear-gradient(135deg, #059669, #047857);
+                }
+                
+                .form-submit button:active {
+                    transform: translateY(-1px);
                 }
                 
                 .form-note {
                     color: #94a3b8;
                     font-size: 0.875rem;
-                    margin-top: 1rem;
+                    margin-top: 1.5rem;
+                    line-height: 1.6;
                 }
                 
                 .form-note a {
                     color: #10b981;
+                    text-decoration: none;
+                    font-weight: 500;
+                }
+                
+                .form-note a:hover {
+                    text-decoration: underline;
+                }
+                
+                /* Success state styling */
+                .success-state {
+                    display: none;
+                    text-align: center;
+                    padding: 3rem 2rem;
+                }
+                
+                .success-state i {
+                    font-size: 4rem;
+                    color: #10b981;
+                    margin-bottom: 1.5rem;
+                }
+                
+                .success-state h3 {
+                    color: white;
+                    margin-bottom: 1rem;
+                    font-size: 1.8rem;
+                }
+                
+                .success-state p {
+                    color: #cbd5e1;
+                    max-width: 500px;
+                    margin: 0 auto 2rem;
+                    line-height: 1.6;
+                }
+                
+                /* Error state */
+                .form-group input.error,
+                .form-group select.error,
+                .form-group textarea.error {
+                    border-color: #ef4444 !important;
+                    background: rgba(239, 68, 68, 0.1) !important;
+                }
+                
+                .field-feedback.error {
+                    color: #ef4444;
                 }
             </style>
         </div>
@@ -954,33 +1118,6 @@
                 }
             });
             
-            // Contact form submission
-            const contactForm = document.getElementById('contactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // Get form data
-                    const formData = new FormData(this);
-                    const data = Object.fromEntries(formData);
-                    
-                    // Simple validation
-                    if (!data.name || !data.email || !data.phone || !data.message) {
-                        alert('Please fill in all required fields.');
-                        return;
-                    }
-                    
-                    // Show success message
-                    alert('Thank you for your submission! We will contact you within 24 hours to schedule your free strategy session.');
-                    
-                    // Reset form
-                    this.reset();
-                    
-                    // Scroll to top
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
-            }
-            
             // FAQ functionality
             const faqQuestions = document.querySelectorAll('.faq-question');
             faqQuestions.forEach(question => {
@@ -1173,7 +1310,108 @@
                     }, 500);
                 }, 1000);
             });
+            
+            // ==================== EMAILJS FORM SUBMISSION ====================
+            // Initialize EmailJS
+            (function() {
+                emailjs.init("service_gzsu9fi");
+            })();
+            
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form data
+                    const formData = new FormData(this);
+                    const data = Object.fromEntries(formData);
+                    
+                    // Simple validation
+                    let hasError = false;
+                    const requiredFields = ['name', 'email', 'phone', 'message'];
+                    
+                    requiredFields.forEach(fieldName => {
+                        const field = document.querySelector(`[name="${fieldName}"]`);
+                        const feedback = field.closest('.form-group').querySelector('.field-feedback');
+                        
+                        if (!data[fieldName] || data[fieldName].trim() === '') {
+                            hasError = true;
+                            field.classList.add('error');
+                            if (feedback) {
+                                feedback.textContent = 'This field is required';
+                                feedback.classList.add('show', 'error');
+                            }
+                        } else {
+                            field.classList.remove('error');
+                            if (feedback && !feedback.textContent.includes('✓')) {
+                                feedback.classList.remove('show', 'error');
+                            }
+                        }
+                    });
+                    
+                    if (hasError) {
+                        alert('Please fill in all required fields marked with *.');
+                        return;
+                    }
+                    
+                    // Show loading state
+                    const submitBtn = contactForm.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.innerHTML;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                    submitBtn.disabled = true;
+                    
+                    // Send email using EmailJS
+                    emailjs.sendForm('service_gzsu9fi', 'template_a5nie8d', this)
+                        .then(function(response) {
+                            console.log('SUCCESS!', response.status, response.text);
+                            
+                            // Redirect to thank-you page
+                            window.location.href = 'thank-you.html';
+                            
+                        }, function(error) {
+                            console.log('FAILED...', error);
+                            alert('There was an error submitting the form. Please try again or contact us directly.');
+                            
+                            // Reset button
+                            submitBtn.innerHTML = originalText;
+                            submitBtn.disabled = false;
+                        });
+                });
+                
+                // Add field feedback for better UX
+                const formFields = document.querySelectorAll('.form-group input, .form-group select, .form-group textarea');
+                formFields.forEach(field => {
+                    const feedback = field.closest('.form-group').querySelector('.field-feedback');
+                    if (!feedback) {
+                        const div = document.createElement('div');
+                        div.className = 'field-feedback';
+                        field.closest('.form-group').appendChild(div);
+                    }
+                    
+                    field.addEventListener('input', function() {
+                        if (this.value.trim() !== '') {
+                            this.classList.add('filled');
+                            const feedback = this.closest('.form-group').querySelector('.field-feedback');
+                            if (feedback && !this.classList.contains('error')) {
+                                feedback.textContent = '✓';
+                                feedback.classList.add('show');
+                                feedback.classList.remove('error');
+                            }
+                        } else {
+                            this.classList.remove('filled');
+                            const feedback = this.closest('.form-group').querySelector('.field-feedback');
+                            if (feedback) {
+                                feedback.classList.remove('show');
+                            }
+                        }
+                    });
+                });
+            }
+            // ==================== END EMAILJS FORM SUBMISSION ====================
         });
     </script>
+    
+    <!-- EmailJS Library -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </body>
 </html>
