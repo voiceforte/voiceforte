@@ -1312,9 +1312,9 @@
             });
             
             // ==================== EMAILJS FORM SUBMISSION ====================
-            // Initialize EmailJS
+            // Initialize EmailJS with correct Public Key
             (function() {
-                emailjs.init("service_gzsu9fi");
+                emailjs.init("q0p9boPusnUDXiH2-");
             })();
             
             const contactForm = document.getElementById('contactForm');
@@ -1360,17 +1360,34 @@
                     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
                     submitBtn.disabled = true;
                     
-                    // Send email using EmailJS
+                    // Send email using EmailJS with correct Service ID and Template ID
                     emailjs.sendForm('service_gzsu9fi', 'template_a5nie8d', this)
                         .then(function(response) {
                             console.log('SUCCESS!', response.status, response.text);
                             
-                            // Redirect to thank-you page
-                            window.location.href = 'thank-you.html';
+                            // Show success message
+                            const successMessage = document.createElement('div');
+                            successMessage.className = 'success-state';
+                            successMessage.innerHTML = `
+                                <i class="fas fa-check-circle"></i>
+                                <h3>Thank You! Your Strategy Session is Booked</h3>
+                                <p>We've received your request and will contact you within 24 hours to schedule your free 60-minute strategy session. Check your email for confirmation.</p>
+                                <p>You can also call us directly at <a href="tel:+923332924941" style="color: #10b981; font-weight: 600;">+92 333 2924941</a> for immediate assistance.</p>
+                            `;
+                            
+                            const formContainer = document.querySelector('.strategy-form-container');
+                            const form = document.querySelector('.strategy-form');
+                            form.style.display = 'none';
+                            formContainer.appendChild(successMessage);
+                            successMessage.style.display = 'block';
+                            
+                            // Reset button
+                            submitBtn.innerHTML = originalText;
+                            submitBtn.disabled = false;
                             
                         }, function(error) {
                             console.log('FAILED...', error);
-                            alert('There was an error submitting the form. Please try again or contact us directly.');
+                            alert('There was an error submitting the form. Please try again or contact us directly at +92 333 2924941.');
                             
                             // Reset button
                             submitBtn.innerHTML = originalText;
